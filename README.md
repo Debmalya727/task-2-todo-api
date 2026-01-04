@@ -27,12 +27,15 @@ Navigate to the project folder and install the required packages:
 cd task-2-todo-api
 pip install -r requirements.txt
 (If you haven't created the requirements.txt file yet, see the section below).3. Run the ServerStart the API server using Uvicorn:Bashuvicorn main:app --reload
-The server will start at http://127.0.0.1:8000.🧪 How to Test (Swagger UI)The easiest way to test the API is through the automatic interactive documentation.Open Docs: Go to http://127.0.0.1:8000/docs in your browser.Authorize:Click the Authorize button (top right).Username: adminPassword: secretClick Login (This generates and saves your JWT token).Test Endpoints:POST /tasks: Create a new task (e.g., {"title": "Finish Assessment", "description": "Write READMEs"}).GET /tasks: Execute this to see the list of tasks you just created.DELETE /tasks/{id}: Remove a task by its ID.📡 API Endpoints StructureMethodEndpointDescriptionAuth RequiredPOST/tokenLogin to get Access Token❌ NoGET/tasksRetrieve current user's tasks✅ YesPOST/tasksCreate a new task✅ YesPUT/tasks/{id}Update an existing task✅ YesDELETE/tasks/{id}Delete a task✅ Yes📂 Project StructurePlaintexttask-2-todo-api/
+The server will start at http://127.0.0.1:8000.🧪 How to Test (Swagger UI)The easiest way to test the API is through the automatic interactive documentation.Open Docs: Go to http://127.0.0.1:8000/docs in your browser.Authorize:Click the Authorize button (top right).Username: adminPassword: secretClick Login (This generates and saves your JWT token).Test Endpoints:POST /tasks: Create a new task (e.g., {"title": "Finish Assessment", "description": "Write READMEs"}).GET /tasks: Execute this to see the list of tasks you just created.DELETE /tasks/{id}: Remove a task by its ID.📡 API Endpoints StructureMethodEndpointDescriptionAuth RequiredPOST/tokenLogin to get Access Token❌ NoGET/tasksRetrieve current user's tasks✅ YesPOST/tasksCreate a new task✅ YesPUT/tasks/{id}Update an existing task✅ YesDELETE/tasks/{id}Delete a task✅ Yes📂 
+```text
+Project StructurePlaintexttask-2-todo-api/
 │
 ├── main.py          # API Routes and Business Logic
 ├── auth.py          # JWT Handling and Password Hashing
 ├── requirements.txt # Project Dependencies
 └── README.md        # Documentation
+```
 Submitted as part of the Internship Technical Assessment 2025.
 
 
@@ -44,4 +47,5 @@ fastapi
 uvicorn[standard]
 python-jose[cryptography]
 passlib[bcrypt]
+
 pydantic
